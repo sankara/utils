@@ -8,7 +8,8 @@
   (let [message (reduce str
                         (map #(->> %
                                    (re-find #"\d+")
-                                   (pt-client/format-commit-message)) branches))]
+                                   (pt-client/format-commit-message)) 
+                             branches))]
     (println message)
     (clipboard/spit message)))
 
